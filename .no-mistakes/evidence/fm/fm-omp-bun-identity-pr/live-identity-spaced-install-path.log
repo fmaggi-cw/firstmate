@@ -1,0 +1,6 @@
+# omp launched from a symlink under a spaced dir:
+/var/folders/rf/0k9kxrnd1qgcmwt_b_cv2gg80000gp/T//fm-space.HWCt9A/Agent Tools/bin/omp
+# ps -o comm=,args= of that launch:
+bun  bun /var/folders/rf/0k9kxrnd1qgcmwt_b_cv2gg80000gp/T//fm-space.HWCt9A/Agent Tools/bin/omp --mode rpc --no-session
+# tests/fm-omp-primary-live-e2e.test.sh with that omp first on PATH:
+ok - omp omp/18.12.3 (bun-package): detected as omp and acquired the session lock with no model tokens

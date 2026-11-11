@@ -1,0 +1,5 @@
+# Mutation A: matcher judges only the first word after bun (pre-fix), spaced install path:
+not ok - omp omp/18.12.3 (bun-package) was detected as claude, not omp
+
+# Mutation B: session-lock walk drops the omp identity; detection still matches:
+not ok - omp omp/18.12.3 (bun-package) acquired the session lock for pid 55529, not the omp process 20085

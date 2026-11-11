@@ -1,0 +1,9 @@
+match     comm=omp   args=omp
+match     comm=bun   args=bun /var/folders/rf/0k9kxrnd1qgcmwt_b_cv2gg80000gp/T//fm-space.HWCt9A/Agent Tools/bin/omp --mode rpc --no-session
+no-match  comm=bun   args=bun /opt/Agent Tools/bin/omp
+match     comm=bun   args=bun /Users/fmaggi/.bun/bin/omp
+no-match  comm=bun   args=bun /usr/local/bin/ompd
+no-match  comm=bun   args=bun --cwd /dir omp
+no-match  comm=bun   args=bun /Users/fmaggi/.bun/install/global/node_modules/@oh-my-pi/pi-coding-agent/dist/cli.js
+no-match  comm=comp  args=comp
+no-match  comm=node  args=node /x/omp
