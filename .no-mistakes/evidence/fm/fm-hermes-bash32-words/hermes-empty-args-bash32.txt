@@ -1,0 +1,30 @@
+$ /bin/bash --version | head -1
+GNU bash, version 3.2.57(1)-release (arm64-apple-darwin25)
+
+== AFTER fix (HEAD 83ee29a3): direct calls under set -u, /bin/bash 3.2
+  [] rc=1
+  [   ] rc=1
+  [hermes] rc=0
+  [/usr/local/bin/hermes chat] rc=0
+  [node /opt/x/ui-tui/dist/entry.js] rc=0
+  [python3 -m tui_gateway.entry] rc=0
+  [node -e hermes] rc=1
+  [vim] rc=1
+
+== AFTER fix: /bin/bash tests/fm-hermes-harness.test.sh
+not ok - NUL argv identity lost when names/ps args are blind
+exit=
+
+== BEFORE fix (base bf0f3468 lib): same probes
+  [] /var/folders/rf/0k9kxrnd1qgcmwt_b_cv2gg80000gp/T//old-lib.sh: line 6: words[@]: unbound variable
+  [hermes] rc=0
+
+== BEFORE fix lib + HEAD test: /bin/bash tests/fm-hermes-harness.test.sh
+/Users/fmaggi/.no-mistakes/worktrees/998ea6beee83/01M78WBHDQD21XF1H0S2ND7ZEY/bin/fm-hermes-process-lib.sh: line 6: words[@]: unbound variable
+exit=
+== caller fm_agent_process_classify with empty ps args, /bin/bash 3.2, set -u
+-- AFTER fix:
+classify(python3,'','')=other
+classify(hermes,'',hermes)=agent
+-- BEFORE fix:
+classify(python3,'','')=other
