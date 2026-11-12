@@ -1,0 +1,33 @@
+## Mutation A: spaced-path rebuild removed from fm_omp_process_matches
+--- bin/fm-omp-process-lib.sh	2026-11-11 20:12:18
++++ /var/folders/rf/0k9kxrnd1qgcmwt_b_cv2gg80000gp/T//fm-mutA.0ru2jn/bin/fm-omp-process-lib.sh	2026-11-11 20:17:59
+@@ -27,10 +27,5 @@
+   n=${#words[@]}
+   [ "$n" -ge 2 ] && [ "${words[0]##*/}" = bun ] || return 1
+   script=${words[1]}
+-  for ((i = 2; i < n; i++)); do
+-    [ -f "$script" ] && break
+-    script+=" ${words[i]}"
+-  done
+-  [ -f "$script" ] || script=${words[1]}
+   [ "${script##*/}" = omp ]
+ }
+$ PATH="<tmp>/Agent Tools/bin:$PATH" bash tests/fm-omp-primary-live-e2e.test.sh   (mutated copy)
+not ok - omp omp/18.12.3 (bun-package) was detected as claude, not omp
+exit=1
+
+## Mutation B: session-lock walk no longer recognizes omp (detection still does)
+--- bin/fm-session-lock-lib.sh	2026-11-11 20:12:18
++++ /var/folders/rf/0k9kxrnd1qgcmwt_b_cv2gg80000gp/T//fm-mutB.nv5fFf/bin/fm-session-lock-lib.sh	2026-11-11 20:17:59
+@@ -138,7 +138,6 @@
+   # locate its own harness in the ancestry, so every session start refuses the
+   # fleet lock as read-only and the park can never arm.
+   fm_cursor_process_matches "$comm" "$args" "$argv0" && return 0
+-  fm_omp_process_matches "$comm" "$args" && return 0
+   return 1
+ }
+ 
+$ bash tests/fm-omp-primary-live-e2e.test.sh   (mutated copy, installed ~/.bun/bin/omp)
+not ok - omp omp/18.12.3 (bun-package) acquired the session lock for pid 49055, not the omp process 17094
+exit=1
+49055 claude

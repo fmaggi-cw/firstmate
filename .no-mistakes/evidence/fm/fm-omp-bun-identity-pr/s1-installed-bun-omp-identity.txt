@@ -1,0 +1,5 @@
+$ ls -l $(command -v omp)
+lrwxrwxrwx@ 1 fmaggi  staff  68 Oct 19 17:46 /Users/fmaggi/.bun/bin/omp -> ../install/global/node_modules/@oh-my-pi/pi-coding-agent/dist/cli.js
+$ bash tests/fm-omp-primary-live-e2e.test.sh
+ok - omp omp/18.12.3 (bun-package): detected as omp and acquired the session lock with no model tokens
+exit=0

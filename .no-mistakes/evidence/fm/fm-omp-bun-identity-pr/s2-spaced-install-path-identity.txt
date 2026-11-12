@@ -1,0 +1,5 @@
+$ PATH="/var/folders/rf/0k9kxrnd1qgcmwt_b_cv2gg80000gp/T//fm-omp-sp.N1qi6z/Agent Tools/bin:$PATH" bash tests/fm-omp-primary-live-e2e.test.sh
+ok - omp omp/18.12.3 (bun-package): detected as omp and acquired the session lock with no model tokens
+exit=0
+# live ps of the bun-run omp during the probe (pid comm args):
+90256 bun              bun /var/folders/rf/0k9kxrnd1qgcmwt_b_cv2gg80000gp/T//fm-omp-sp.N1qi6z/Agent Tools/bin/omp --version
